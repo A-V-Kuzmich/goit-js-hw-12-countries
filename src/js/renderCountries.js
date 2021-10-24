@@ -57,7 +57,7 @@ function renderCountry(country) {
 // обработчики ошибок
  function warning(value) {
   allert({
-    title: `${value} was found`,
+    title: `🕵${value} was found`,
     text: "Too many matches found. Please enter a more specific query",
     button: false,
     timer: 5000
@@ -65,7 +65,7 @@ function renderCountry(country) {
 }
  function error() {
   allert({
-    title: "Oops",
+    title: "⚠ Oops",
     text: "Nothing is found",
     button: false,
     className: "error",
