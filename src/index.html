@@ -16,14 +16,14 @@
   <body>
     <header></header>
     <main>
-      <div class="container">
-        <input id="input" type="text" />
-      </div>
+      <section class="country">
+        <div class="container drop">
+          <input id="input" type="text" placeholder="enter country " />
+          <div class="country__render"></div>
+        </div>
+      </section>
     </main>
     <footer></footer>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <include src="./partials/example.html"></include>
-    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
   </body>
 </html>

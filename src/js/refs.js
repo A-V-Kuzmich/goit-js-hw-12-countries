@@ -1,7 +1,5 @@
   const refs = {
-    main: document.querySelector('main'),
-    countryList: document.querySelector('.country-list'),
     input: document.querySelector('#input'),
-
+    countryRender: document.querySelector('.country__render'),
 };
 export default refs;
