@@ -29,6 +29,7 @@
   "dependencies": {
     "@pnotify/core": "^5.2.0",
     "@pnotify/desktop": "^5.2.0",
-    "debounce": "^1.2.1"
+    "debounce": "^1.2.1",
+    "sweetalert": "^2.1.2"
   }
 }
