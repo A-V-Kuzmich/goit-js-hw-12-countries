@@ -63,12 +63,13 @@ function renderCountry(country) {
     timer: 5000
   })
 }
- function error() {
-  allert({
-    title: "⚠ Oops",
-    text: "Nothing is found",
-    button: false,
-    className: "error",
-    timer: 2500
-  })
+function error() {
+    clean();
+    allert({
+        title: "⚠ Oops",
+        text: "Nothing is found",
+        button: false,
+        className: "error",
+        timer: 2500
+    });
 }
