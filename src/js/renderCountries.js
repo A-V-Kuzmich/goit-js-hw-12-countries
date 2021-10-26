@@ -17,6 +17,9 @@ input.addEventListener('input', debounce((e) => {
 function action(countryes) {
     fetchCountry(countryes)
         .then(result => {
+            if (result.status === 404) {
+                return error()
+            };     
             if (result.length === 1) {
                 clean();
                 return renderCountry(result);
@@ -24,15 +27,12 @@ function action(countryes) {
             if (result.length < 10) {
                 return renderList(result);
             };
-            if (result.status === 404) {
-                return error()
-            };     
             if (result.length > 0) {
                 return warning(result.length)
             };     
             return error();
         })
-        .catch(error => console.log(error))   
+        .catch(error => alert(error))   
 };
 //чистит input
 function clean() {
