@@ -9,17 +9,13 @@ const { input, countryRender} = refs;
 
 //сулушатель input
 input.addEventListener('input', debounce((e) => {
-    console.log(e.target.value);
     action(e.target.value);
   }, 500)
 );
 // запрос на сервер 
 function action(countryes) {
     fetchCountry(countryes)
-        .then(result => {
-            if (result.status === 404) {
-                return error()
-            };     
+        .then(result => {   
             if (result.length === 1) {
                 clean();
                 return renderCountry(result);
@@ -30,7 +26,7 @@ function action(countryes) {
             if (result.length > 0) {
                 return warning(result.length)
             };     
-            return error();
+            return error('⚠');
         })
         .catch(error => alert(error))   
 };
@@ -63,10 +59,10 @@ function renderCountry(country) {
     timer: 5000
   })
 }
-function error() {
+export function error(status) {
     clean();
     allert({
-        title: "⚠ Oops",
+        title: `${status} Oops`,
         text: "Nothing is found",
         button: false,
         className: "error",
